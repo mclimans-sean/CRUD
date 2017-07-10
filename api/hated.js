@@ -33,7 +33,6 @@ router.get('/:id', isValidId, (req, res, next) => {
 });
 
 router.post('/', (req, res, next) => {
-  console.log(req.body);
   if (validMovie(req.body)) {
     queries.create(req.body).then(hated => {
       res.json(hated[0]);
